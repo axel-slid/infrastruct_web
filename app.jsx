@@ -3,6 +3,7 @@ const { useState, useEffect, useRef } = React;
 function App() {
   const [tweaks, setTweaks] = useState(window.__TWEAKS);
   const blobsRef = useRef([]);
+  const desktopDownloadHref = "./downloads/infrastruct-desktop-macos-arm64.dmg";
 
   // Apply tweaks to :root
   useEffect(() => {
@@ -59,7 +60,10 @@ function App() {
             <a href="#pricing">Pricing</a>
             <a href="#customers">Customers</a>
           </div>
-          <a href="#contact" className="nav-cta">Get access →</a>
+          <div className="nav-actions">
+            <a href={desktopDownloadHref} className="nav-download" download>Download for macOS</a>
+            <a href="#contact" className="nav-cta">Get access →</a>
+          </div>
         </div>
       </nav>
 
@@ -76,6 +80,7 @@ function App() {
           <p className="hero-sub">Infrastruct deploys observer agents across your team's stack. Two weeks later, every employee and their manager gets a concrete blueprint for where AI fits into their actual workflow.</p>
           <div className="hero-ctas">
             <a href="#contact" className="btn btn-primary">Get access <span>→</span></a>
+            <a href={desktopDownloadHref} className="btn btn-accent" download>Download the Mac app</a>
             <a href="#how" className="btn btn-ghost">See how it works</a>
           </div>
 

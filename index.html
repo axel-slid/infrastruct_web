@@ -224,8 +224,34 @@ section { position: relative; z-index: 2; }
 }
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
 
+.nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 100px;
+  border: 1px solid var(--line-2);
+  background: color-mix(in oklab, var(--bg-elev) 90%, transparent);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+.nav-download:hover {
+  transform: translateY(-1px);
+  border-color: var(--ink);
+  background: var(--bg-elev);
+}
+
 @media (max-width: 820px) {
   .nav-links { display: none; }
+  .nav-actions { width: 100%; justify-content: flex-end; }
 }
 
 /* ------- Buttons ------- */
